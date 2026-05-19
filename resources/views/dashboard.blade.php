@@ -16,7 +16,7 @@
     <div class="w-64 bg-white shadow-xl min-h-screen p-6">
 
         <h1 class="text-3xl font-bold text-indigo-600 mb-10">
-            ChatApp
+            Chat-App
         </h1>
 
         <div class="space-y-4">
@@ -26,15 +26,14 @@
                 💬 Realtime Chat
             </a>
 
-            <a href="#"
-               class="block bg-gray-100 px-4 py-3 rounded-xl hover:bg-gray-200 transition">
-                👤 Profile
-            </a>
+            
 
-            <a href="#"
-               class="block bg-gray-100 px-4 py-3 rounded-xl hover:bg-gray-200 transition">
-                👥 Group
-            </a>
+<a href="/group"
+   class="block bg-gray-100 px-4 py-3 rounded-xl hover:bg-gray-200 transition">
+    👥 Group-Chat
+    
+</a>
+</a>
 
             <form method="POST" action="/logout">
                 @csrf
@@ -61,7 +60,7 @@
             </h1>
 
             <p class="text-lg opacity-90">
-                Selamat datang di aplikasi realtime chat modern.
+                Selamat datang di aplikasi realtime chat
             </p>
 
         </div>
@@ -81,7 +80,7 @@
                 </h2>
 
                 <p class="text-gray-500 mb-6">
-                    Masuk ke halaman percakapan realtime.
+                    Masuk ke halaman chat
                 </p>
 
                 <a href="/chat"
@@ -91,29 +90,5 @@
 
             </div>
 
-            <!-- CARD 2 -->
-            <div class="bg-white p-8 rounded-3xl shadow-lg hover:scale-105 transition">
-
-                <div class="text-5xl mb-4">
-                    👤
-                </div>
-
-                <h2 class="text-2xl font-bold mb-2">
-                    Profile
-                </h2>
-
-                <p class="text-gray-500 mb-6">
-                    Kelola akun dan data pengguna.
-                </p>
-
-                <button
-                    class="bg-green-500 text-white px-5 py-3 rounded-xl hover:bg-green-600 transition">
-                    Edit Profile
-                </button>
-
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="bg-white p-8 rounded-3xl shadow-lg hover:scale-105 transition">
-
-                <div
+        
+          

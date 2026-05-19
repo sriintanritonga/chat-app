@@ -32,4 +32,10 @@ class User extends Authenticatable
             'is_online' => 'boolean',
         ];
     }
+
+    // TAMBAHKAN INI
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
+    }
 }

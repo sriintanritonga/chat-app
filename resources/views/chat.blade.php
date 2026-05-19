@@ -167,9 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message');
 
-    // =========================
-    // KIRIM PESAN
-    // =========================
+    
 
     chatForm.addEventListener('submit', async (e) => {
 
@@ -191,10 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     .getAttribute('content')
             },
 
-          body: JSON.stringify({
-    message: text,
-    receiver_id: {{ $selectedUser?->id ?? 'null' }}
-})
+            body: JSON.stringify({
+                message: text,
+                receiver_id: {{ $selectedUser?->id ?? 'null' }}
+            })
 
         });
 
@@ -225,11 +223,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // =========================
-    // REALTIME LISTENER
-    // =========================
 
-    window.Echo.channel('chat')
+
+    window.Echo.channel('online')
         .listen('.message.sent', (e) => {
 
             if (e.message.sender_id == userId) return;
@@ -256,7 +252,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
 
+
+
+    window.Echo.join('online')
+
+        .here((users) => {
+            console.log('Online users:', users);
+        })
+
+        .joining((user) => {
+            console.log(user.name + ' joined');
+        })
+
+        .leaving((user) => {
+            console.log(user.name + ' left');
+        });
+
 });
+
 
 </script>
 
